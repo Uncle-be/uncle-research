@@ -25,9 +25,9 @@
     <script type="importmap">
 {
   "imports": {
-    "react": "https://esm.sh/react@^19.2.3",
-    "react-dom": "https://esm.sh/react-dom@^19.2.3",
-    "react-dom/client": "https://esm.sh/react-dom@^19.2.3/client",
+    "react": "https://esm.sh/react@18",
+    "react-dom": "https://esm.sh/react-dom@18",
+    "react-dom/client": "https://esm.sh/react-dom@18/client",
     "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
     "react/": "https://esm.sh/react@^19.2.3/"
   }
@@ -37,12 +37,8 @@
 <body class="bg-slate-50 text-slate-900">
     <div id="root"></div>
 
-    <!-- 
-      This script block imports your index.tsx. 
-      Because we are using data-type="module", Babel knows to 
-      process the 'import' statements correctly.
-    -->
     <script type="text/babel" data-type="module">
+        // Import index.tsx and explicitly use the file extension
         import './index.tsx';
     </script>
 </body>
