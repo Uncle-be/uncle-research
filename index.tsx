@@ -12,4 +12,10 @@ if (mountNode) {
       <App />
     </React.StrictMode>
   );
+  
+  // Explicitly hide the loader once rendering starts
+  const loader = document.getElementById('initial-loader');
+  if (loader) {
+    loader.style.display = 'none';
+  }
 }
