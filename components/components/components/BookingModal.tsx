@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import { Service } from '../types';
+import { Service } from '../types.ts';
 
 interface BookingModalProps {
   isOpen: boolean;
