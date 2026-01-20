@@ -1,5 +1,5 @@
 
-import React from 'react';
+import { CONTACT_INFO } from '../constants.tsx';
 import { CONTACT_INFO } from '../constants';
 
 const Hero: React.FC = () => {
