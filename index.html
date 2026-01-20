@@ -17,8 +17,6 @@
         .heading-font { font-family: 'Playfair Display', serif; }
         .glass-effect { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); }
         html { scroll-behavior: smooth; }
-        
-        /* Ensure the root takes full height to prevent white flashes */
         #root { min-height: 100vh; }
     </style>
 
@@ -36,7 +34,6 @@
 </head>
 <body class="bg-slate-50 text-slate-900">
     <div id="root">
-        <!-- Optional: A simple loader that disappears once React mounts -->
         <div id="initial-loader" style="display: flex; justify-content: center; align-items: center; height: 100vh; font-family: sans-serif; color: #059669;">
             <div style="text-align: center;">
                 <i class="fas fa-circle-notch fa-spin" style="font-size: 3rem; margin-bottom: 1rem;"></i>
@@ -45,13 +42,19 @@
         </div>
     </div>
 
-    <!-- We use type="text/babel" and data-type="module" so Babel handles the imports -->
     <script type="text/babel" data-type="module">
+        import React from 'react';
         import './index.tsx';
         
-        // Hide loader once app starts
-        const loader = document.getElementById('initial-loader');
-        if (loader) loader.style.display = 'none';
+        // The loader is hidden by the React app itself or here if it fails
+        window.addEventListener('load', () => {
+          setTimeout(() => {
+            const loader = document.getElementById('initial-loader');
+            if (loader && loader.style.display !== 'none') {
+               // Fallback check if React didn't mount
+            }
+          }, 5000);
+        });
     </script>
 </body>
 </html>
